@@ -330,7 +330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameras:
   - {fileID: 1854076867}
-  - {fileID: 0}
+  - {fileID: 1853847348}
   PhantasusCamera: {fileID: 1854076867}
   PhobetorCamera: {fileID: 1853847348}
   startCamera: {fileID: 1854076867}
