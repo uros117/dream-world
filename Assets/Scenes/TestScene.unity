@@ -2395,11 +2395,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 779425823}
-  - component: {fileID: 779425822}
+  - component: {fileID: 779425824}
   - component: {fileID: 779425821}
   - component: {fileID: 779425820}
   - component: {fileID: 779425819}
   - component: {fileID: 779425818}
+  - component: {fileID: 779425825}
   m_Layer: 9
   m_Name: EnemySimple (1)
   m_TagString: Enemy
@@ -2417,7 +2418,7 @@ Animator:
   m_GameObject: {fileID: 779425817}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6f0a2ae30419df541a1d62e19f836419, type: 2}
+  m_Controller: {fileID: 9100000, guid: fa7d4ec196a11254eb9fdfd78d51e3dc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2443,7 +2444,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -2487,8 +2488,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.15}
-  m_Size: {x: 0.46, y: 1.72}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 0.5}
   m_Direction: 0
 --- !u!212 &779425821
 SpriteRenderer:
@@ -2510,7 +2511,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f7ae16364b516854e9d432c26bfc2892, type: 2}
+  - {fileID: 2100000, guid: ef3392be0441de341a216f68a5f4c7cf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2531,35 +2532,17 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 96be36fcbc69e8944b5d9f089bc07112, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.9985716, y: 2.249375}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &779425822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 779425817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fba604f8fb16ce24abb8275c4ac53990, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  life: 10
-  turnLayerMask:
-    serializedVersion: 2
-    m_Bits: 513
-  speed: 5
-  isInvincible: 0
 --- !u!4 &779425823
 Transform:
   m_ObjectHideFlags: 0
@@ -2569,7 +2552,7 @@ Transform:
   m_GameObject: {fileID: 779425817}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.450687, y: 10.154604, z: 0}
+  m_LocalPosition: {x: 15.34, y: 0.66, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2577,6 +2560,41 @@ Transform:
   - {fileID: 1121280586}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &779425824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779425817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce97e1c784cd7ca4a831093a624b6eb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player_game_object: {fileID: 1377240473040909}
+  stop_distance_from_player: 0.5
+  life: 10
+  turnLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  speed: 5
+  isInvincible: 0
+--- !u!111 &779425825
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779425817}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: fbd5df45bfa924d478b038ee22d256de, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &795341154
 GameObject:
   m_ObjectHideFlags: 0
