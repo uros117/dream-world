@@ -131,8 +131,9 @@ public class CharacterController2D : MonoBehaviour
 	}
 
 
-	public void Move(float move, bool jump, bool dash)
+	public void Move(float move, bool jump, bool dash, bool doubleJumpEnabled)
 	{
+		canDoubleJump = doubleJumpEnabled;
 		if (canMove) {
 			if (dash && canDash && !isWallSliding)
 			{
@@ -246,8 +247,9 @@ public class CharacterController2D : MonoBehaviour
 				m_WallCheck.localPosition = new Vector3(Mathf.Abs(m_WallCheck.localPosition.x), m_WallCheck.localPosition.y, 0);
 				canDoubleJump = true;
 			}
-		}
-	}
+        }
+        canDoubleJump = doubleJumpEnabled;
+    }
 
 
 	private void Flip()
