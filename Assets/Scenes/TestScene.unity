@@ -3665,6 +3665,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  phobiaBlocks: {fileID: 0}
 --- !u!4 &1178582325
 Transform:
   m_ObjectHideFlags: 0
