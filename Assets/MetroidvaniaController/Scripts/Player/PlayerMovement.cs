@@ -14,6 +14,9 @@ public class PlayerMovement : MonoBehaviour {
 	bool jump = false;
 	bool dash = false;
 
+	float jumpDur = 0;
+	const float jumpDurMax = 1.0f;
+
 	//bool dashAxis = false;
 	
 	// Update is called once per frame
@@ -26,7 +29,14 @@ public class PlayerMovement : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.Z))
 		{
 			jump = true;
+
+			//jumpDur = 0;
 		}
+
+		//if(Input.GetKeyUp(KeyCode.Z))
+		//{
+		//	jump = false;
+		//}
 
 		if (Input.GetKeyDown(KeyCode.C) && swapController.currDreamState == DreamState.Phobia)
 		{
@@ -63,6 +73,11 @@ public class PlayerMovement : MonoBehaviour {
 	void FixedUpdate ()
 	{
 		// Move our character
+		//if ((jumpDur < jumpDurMax) && jump)
+		//{
+		//	jumpDur += Time.fixedDeltaTime;
+		//}
+		//else jump = false;
 		controller.Move(horizontalMove * Time.fixedDeltaTime, jump, dash, swapController.currDreamState == DreamState.Fantasy);
 		jump = false;
 		dash = false;

@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Phobia
   layers:
   - Default
   - TransparentFX
@@ -41,4 +42,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1128593167
+    locked: 0
+  - name: Water
+    uniqueID: 2161120191
+    locked: 0
+  - name: Foreground
+    uniqueID: 3008944803
+    locked: 0
+  - name: Objects
+    uniqueID: 2176379329
     locked: 0

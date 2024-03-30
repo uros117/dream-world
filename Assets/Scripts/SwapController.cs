@@ -25,6 +25,8 @@ public class SwapController : MonoBehaviour
     [NonSerialized]
     public DreamState currDreamState;
 
+    public GameObject phobiaBlocks;
+
     void Start()
     {
         currDreamState = DreamState.Fantasy;
@@ -40,10 +42,13 @@ public class SwapController : MonoBehaviour
             if(currDreamState == DreamState.Fantasy)
             {
                 swapToPhobia.Invoke();
+                phobiaBlocks.SetActive(true);
+
             }
             else
             {
                 swapToFantasy.Invoke();
+                phobiaBlocks.SetActive(false);
             }
             currDreamState = (currDreamState == DreamState.Fantasy) ? DreamState.Phobia : DreamState.Fantasy;
         }
