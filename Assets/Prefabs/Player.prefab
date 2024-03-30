@@ -4857,7 +4857,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7295129609187832954
 Transform:
   m_ObjectHideFlags: 0
@@ -9954,6 +9954,7 @@ GameObject:
   - component: {fileID: 8287129829967376711}
   - component: {fileID: 8577933168033559102}
   - component: {fileID: 5059703247793887555}
+  - component: {fileID: 3667016664746287376}
   m_Layer: 1
   m_Name: Player
   m_TagString: Player
@@ -9994,6 +9995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 783f8b7882d2d2a42a5b76de9179978f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
   m_JumpForce: 400
   m_JumpBoost: 50
   m_MovementSmoothing: 0.05
@@ -10305,3 +10307,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &3667016664746287376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9075270835946833379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d62f80f611043e7bcccb31b0a28798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ability: {fileID: 11400000, guid: 8867be1c64cba4b05bdb4e34bb7a19cb, type: 2}
+  key: 113

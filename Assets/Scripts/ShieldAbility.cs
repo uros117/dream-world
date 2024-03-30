@@ -6,20 +6,21 @@ using UnityEngine;
 [CreateAssetMenu]
 public class ShieldAbility : Ability
 {
-    public GameObject playerObj;
-    public AnimatorController phantasusController;
+    public GameObject playerObj, shieldObj;
+    public CharacterController2D playerController;
     public bool isActive;
 
 
     public override void Activate()
     {
         playerObj = GameObject.FindGameObjectWithTag("Player");
-        GameObject shieldObj = playerObj.transform.Find("Shield").gameObject;
+        shieldObj = playerObj.transform.Find("Shield").gameObject;
+        playerController = playerObj.GetComponent<CharacterController2D>();
         if (playerObj != null)
         {
             isActive = true;
             Debug.Log("Shield radi");
-            //shieldObj.GetComponent<SpriteRenderer>().enabled = false;
+            playerController.invincible = true;
 
             shieldObj.SetActive(true);
         }
@@ -29,11 +30,14 @@ public class ShieldAbility : Ability
     public override void Deactivate()
     {
         playerObj = GameObject.FindGameObjectWithTag("Player");
-        GameObject shieldObj = playerObj.transform.Find("Shield").gameObject;
+        shieldObj = playerObj.transform.Find("Shield").gameObject;
+        playerController = playerObj.GetComponent<CharacterController2D>();
         if (playerObj != null)
         {
             isActive = true;
-            Debug.Log("Shield radi");
+            Debug.Log("Shield ugasen");
+            playerController.invincible = false;
+
             //shieldObj.GetComponent<SpriteRenderer>().enabled = false;
 
             shieldObj.SetActive(false);

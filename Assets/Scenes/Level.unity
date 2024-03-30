@@ -1860,6 +1860,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1313269504781573141, guid: 5387315684b96584abbd472956f24286, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1863307736931711618, guid: 5387315684b96584abbd472956f24286, type: 3}
       propertyPath: swapController
       value: 
@@ -1919,7 +1923,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9075270835946833379, guid: 5387315684b96584abbd472956f24286, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2078502364}
   m_SourcePrefab: {fileID: 100100000, guid: 5387315684b96584abbd472956f24286, type: 3}
 --- !u!1 &1103939167
 GameObject:
@@ -14687,6 +14694,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4519678500266617319, guid: 5387315684b96584abbd472956f24286, type: 3}
   m_PrefabInstance: {fileID: 1073289091}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2078502364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860439798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d62f80f611043e7bcccb31b0a28798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ability: {fileID: 11400000, guid: 8867be1c64cba4b05bdb4e34bb7a19cb, type: 2}
+  key: 113
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
