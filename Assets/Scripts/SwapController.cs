@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Tilemaps;
 
 public enum DreamState:int
 {
@@ -25,11 +27,25 @@ public class SwapController : MonoBehaviour
     [NonSerialized]
     public DreamState currDreamState;
 
-    public GameObject phobiaBlocks;
+    public GameObject phobiaBlocks, fantasyBlocks;
+
+    public GameObject phobiaSky, fantasySky;
+
+    public Material transparent, opaque;
 
     void Start()
     {
         currDreamState = DreamState.Fantasy;
+        if (phobiaSky != null && fantasySky != null)
+        {
+            phobiaSky.SetActive(false);
+            fantasySky.SetActive(true);
+        }
+        setAllRBodyCollider(phobiaBlocks, false);
+        setAllRBodyCollider(fantasyBlocks, true);
+
+        changeAllChildrenMaterial(phobiaBlocks, transparent);
+        changeAllChildrenMaterial(fantasyBlocks, opaque);
     }
 
     void Update()
@@ -39,18 +55,58 @@ public class SwapController : MonoBehaviour
             playerObj.GetComponent<Animator>().runtimeAnimatorController = 
                 currDreamState == DreamState.Fantasy ? phobetorController : phantasusController;
 
-            if(currDreamState == DreamState.Fantasy)
+            if (currDreamState == DreamState.Fantasy)
             {
                 swapToPhobia.Invoke();
-                if (phobiaBlocks != null) phobiaBlocks.SetActive(true);
+                if (phobiaSky != null && fantasySky != null)
+                {
+                    phobiaSky.SetActive(true);
+                    fantasySky.SetActive(false);
+                }
+                setAllRBodyCollider(phobiaBlocks, true);
+                setAllRBodyCollider(fantasyBlocks, false);
 
+                changeAllChildrenMaterial(phobiaBlocks, opaque);
+                changeAllChildrenMaterial(fantasyBlocks, transparent);
             }
             else
             {
                 swapToFantasy.Invoke();
-                if (phobiaBlocks != null) phobiaBlocks.SetActive(false);
+                if (phobiaSky != null && fantasySky != null)
+                {
+                    phobiaSky.SetActive(false);
+                    fantasySky.SetActive(true);
+                }
+                setAllRBodyCollider(phobiaBlocks, false);
+                setAllRBodyCollider(fantasyBlocks, true);
+
+                changeAllChildrenMaterial(phobiaBlocks, transparent);
+                changeAllChildrenMaterial(fantasyBlocks, opaque);
             }
             currDreamState = (currDreamState == DreamState.Fantasy) ? DreamState.Phobia : DreamState.Fantasy;
+        }
+    }
+
+
+    public void setAllRBodyCollider(GameObject gameObject, bool setValue)
+    {
+        if(gameObject != null)
+        {
+            foreach (Collider2D childCol in gameObject.GetComponentsInChildren<Collider2D>())
+            {
+                childCol.enabled = setValue;
+            }
+        }
+    }
+
+    public void changeAllChildrenMaterial(GameObject gameObject, Material mat)
+    {
+        if(gameObject != null)
+        {
+            foreach (TilemapRenderer childTileMap in gameObject.GetComponentsInChildren<TilemapRenderer>())
+            {
+                childTileMap.material = mat;
+            }
         }
     }
 }
