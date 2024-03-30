@@ -69,7 +69,7 @@ public class CharacterController2D : MonoBehaviour
     }
 
     private void Start(){
-        healthBar.SetMaxHealth((int) life);
+        //healthBar.SetMaxHealth((int) life);
     }
 
 
@@ -293,7 +293,7 @@ public class CharacterController2D : MonoBehaviour
             Vector2 damageDir = Vector3.Normalize(transform.position - position) * 40f;
             m_Rigidbody2D.velocity = Vector2.zero;
             m_Rigidbody2D.AddForce(damageDir * 10);
-            healthBar.SetHealth((int) life);
+            //healthBar.SetHealth((int) life);
             if (life <= 0)
             {
                 StartCoroutine(WaitToDead());

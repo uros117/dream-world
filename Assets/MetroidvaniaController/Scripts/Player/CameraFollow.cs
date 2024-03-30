@@ -20,7 +20,14 @@ public class CameraFollow : MonoBehaviour
 
 	Vector3 originalPos;
 
-	void Awake()
+    public GameObject bottomLeft;
+    public GameObject topRight;
+    private float minX;
+    private float maxX;
+    private float minY;
+    private float maxY;
+
+    void Awake()
 	{
 		Cursor.visible = false;
 		if (camTransform == null)
@@ -38,7 +45,20 @@ public class CameraFollow : MonoBehaviour
 	{
 		Vector3 newPosition = Target.position;
 		newPosition.z = -10;
-		transform.position = Vector3.Slerp(transform.position, newPosition, FollowSpeed * Time.deltaTime);
+
+        float vertExtent = Camera.main.orthographicSize;
+        float horzExtent = vertExtent * Screen.width / Screen.height;
+
+        // Calculations assume map is position at the origin
+        minX = bottomLeft.transform.position.x + horzExtent;
+		maxX = topRight.transform.position.x - horzExtent;
+        minY = bottomLeft.transform.position.y + vertExtent;
+        maxY = topRight.transform.position.y - vertExtent;
+
+        newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
+        newPosition.y = Mathf.Clamp(newPosition.y, minY, maxY);
+
+        transform.position = Vector3.Slerp(transform.position, newPosition, FollowSpeed * Time.deltaTime);
 
 		if (shakeDuration > 0)
 		{
@@ -46,9 +66,10 @@ public class CameraFollow : MonoBehaviour
 
 			shakeDuration -= Time.deltaTime * decreaseFactor;
 		}
-	}
 
-	public void ShakeCamera()
+    }
+
+    public void ShakeCamera()
 	{
 		originalPos = camTransform.localPosition;
 		shakeDuration = 0.2f;
