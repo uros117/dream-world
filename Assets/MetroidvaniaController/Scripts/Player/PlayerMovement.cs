@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour {
 	bool dash = false;
 
 	float jumpDur = 0;
-	const float jumpDurMax = 1.0f;
+	const float jumpDurMax = 0.35f;
 
 	//bool dashAxis = false;
 	
@@ -30,13 +30,13 @@ public class PlayerMovement : MonoBehaviour {
 		{
 			jump = true;
 
-			//jumpDur = 0;
+			jumpDur = 0;
 		}
 
-		//if(Input.GetKeyUp(KeyCode.Z))
-		//{
-		//	jump = false;
-		//}
+		if (Input.GetKeyUp(KeyCode.Z))
+		{
+			jumpDur = 0;
+		}
 
 		if (Input.GetKeyDown(KeyCode.C) && swapController.currDreamState == DreamState.Phobia)
 		{
@@ -73,12 +73,14 @@ public class PlayerMovement : MonoBehaviour {
 	void FixedUpdate ()
 	{
 		// Move our character
-		//if ((jumpDur < jumpDurMax) && jump)
-		//{
-		//	jumpDur += Time.fixedDeltaTime;
-		//}
+		if ((jumpDur < jumpDurMax) && Input.GetKey(KeyCode.Z))
+		{
+			jumpDur += Time.fixedDeltaTime;
+		}
+		Debug.Log(jumpDur);
+		//else jumpDur = 0;
 		//else jump = false;
-		controller.Move(horizontalMove * Time.fixedDeltaTime, jump, dash, swapController.currDreamState == DreamState.Fantasy);
+		controller.Move(horizontalMove * Time.fixedDeltaTime, jump, (jumpDur > 0 && jumpDur < jumpDurMax), dash, swapController.currDreamState == DreamState.Fantasy);
 		jump = false;
 		dash = false;
 	}

@@ -42,13 +42,13 @@ public class SwapController : MonoBehaviour
             if(currDreamState == DreamState.Fantasy)
             {
                 swapToPhobia.Invoke();
-                phobiaBlocks.SetActive(true);
+                if (phobiaBlocks != null) phobiaBlocks.SetActive(true);
 
             }
             else
             {
                 swapToFantasy.Invoke();
-                phobiaBlocks.SetActive(false);
+                if (phobiaBlocks != null) phobiaBlocks.SetActive(false);
             }
             currDreamState = (currDreamState == DreamState.Fantasy) ? DreamState.Phobia : DreamState.Fantasy;
         }
