@@ -56,6 +56,8 @@ public class ChangePostProcess : MonoBehaviour
         float start_temp = post_process_volume.profile.GetSetting<ColorGrading>().temperature;
         List<Tuple<FloatParameter, FloatParameter, FloatParameter>> parameters = new List<Tuple<FloatParameter, FloatParameter, FloatParameter>>();
 
+        List<Tuple<Vector4Parameter, Vector4Parameter, Vector4Parameter>> vec_4_parameters = new List<Tuple<Vector4Parameter, Vector4Parameter, Vector4Parameter>>();
+
         parameters.Add(
             new Tuple<FloatParameter, FloatParameter, FloatParameter>(
                 post_process_volume.profile.GetSetting<ColorGrading>().temperature,
@@ -65,10 +67,49 @@ public class ChangePostProcess : MonoBehaviour
 
         parameters.Add(
             new Tuple<FloatParameter, FloatParameter, FloatParameter>(
+                post_process_volume.profile.GetSetting<ColorGrading>().mixerRedOutBlueIn,
+                from.GetSetting<ColorGrading>().mixerRedOutBlueIn,
+                to.GetSetting<ColorGrading>().mixerRedOutBlueIn
+                ));
+        parameters.Add(
+            new Tuple<FloatParameter, FloatParameter, FloatParameter>(
+                post_process_volume.profile.GetSetting<ColorGrading>().mixerRedOutGreenIn,
+                from.GetSetting<ColorGrading>().mixerRedOutGreenIn,
+                to.GetSetting<ColorGrading>().mixerRedOutGreenIn
+                ));
+        parameters.Add(
+            new Tuple<FloatParameter, FloatParameter, FloatParameter>(
+                post_process_volume.profile.GetSetting<ColorGrading>().mixerRedOutRedIn,
+                from.GetSetting<ColorGrading>().mixerRedOutRedIn,
+                to.GetSetting<ColorGrading>().mixerRedOutRedIn
+                ));
+
+        parameters.Add(
+            new Tuple<FloatParameter, FloatParameter, FloatParameter>(
+                post_process_volume.profile.GetSetting<ColorGrading>().mixerGreenOutRedIn,
+                from.GetSetting<ColorGrading>().mixerGreenOutRedIn,
+                to.GetSetting<ColorGrading>().mixerGreenOutRedIn
+                ));
+        parameters.Add(
+            new Tuple<FloatParameter, FloatParameter, FloatParameter>(
+                post_process_volume.profile.GetSetting<ColorGrading>().mixerGreenOutGreenIn,
+                from.GetSetting<ColorGrading>().mixerGreenOutGreenIn,
+                to.GetSetting<ColorGrading>().mixerGreenOutGreenIn
+                ));
+        parameters.Add(
+            new Tuple<FloatParameter, FloatParameter, FloatParameter>(
+                post_process_volume.profile.GetSetting<ColorGrading>().mixerGreenOutBlueIn,
+                from.GetSetting<ColorGrading>().mixerGreenOutBlueIn,
+                to.GetSetting<ColorGrading>().mixerGreenOutBlueIn
+                ));
+
+        parameters.Add(
+            new Tuple<FloatParameter, FloatParameter, FloatParameter>(
                 post_process_volume.profile.GetSetting<Grain>().intensity,
                 from.GetSetting<Grain>().intensity,
                 to.GetSetting<Grain>().intensity
                 ));
+
 
         parameters.Add(
             new Tuple<FloatParameter, FloatParameter, FloatParameter>(
@@ -77,6 +118,22 @@ public class ChangePostProcess : MonoBehaviour
                 to.GetSetting<Vignette>().intensity
                 ));
 
+
+        vec_4_parameters.Add(
+            new Tuple<Vector4Parameter, Vector4Parameter, Vector4Parameter>(
+                post_process_volume.profile.GetSetting<ColorGrading>().gamma,
+                from.GetSetting<ColorGrading>().gamma,
+                to.GetSetting<ColorGrading>().gamma
+                ));
+
+        vec_4_parameters.Add(
+            new Tuple<Vector4Parameter, Vector4Parameter, Vector4Parameter>(
+                post_process_volume.profile.GetSetting<ColorGrading>().lift,
+                from.GetSetting<ColorGrading>().lift,
+                to.GetSetting<ColorGrading>().lift
+                ));
+
+
         while (time < duration)
         {
             foreach ( var param in parameters )
@@ -84,16 +141,23 @@ public class ChangePostProcess : MonoBehaviour
                 float value = Mathf.Lerp(param.Item2.value, param.Item3.value, time / duration);
                 param.Item1.value = value;
             }
-            // post_process_volume.profile.GetSetting<ColorGrading>().temperature.Interp()
-            // float new_temp = Mathf.Lerp(start_temp, target_temp, time / duration);
 
-            //Debug.Log(new_temp);
-            // post_process_volume.profile.GetSetting<ColorGrading>().temperature.value = new_temp;
+            foreach ( var param in vec_4_parameters )
+            {
+                Vector4 value = Vector4.Lerp(param.Item2.value, param.Item3.value, time / duration);
+                param.Item1.value = value;
+            }
+
             time += Time.deltaTime;
             yield return null;
         }
 
         foreach ( var param in parameters )
+        {
+            param.Item1.value = param.Item3.value;
+        }
+
+        foreach ( var param in vec_4_parameters )
         {
             param.Item1.value = param.Item3.value;
         }

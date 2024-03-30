@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class CharacterController2D : MonoBehaviour
 {
+    public HealthBar healthBar;
+
+
     [SerializeField] private float m_JumpForce = 150f;                          // Amount of force added when the player jumps.
     [SerializeField] private float m_JumpBoost = 20f;                           // Amount of force added when the player is holding the jump button.
     [Range(0, .3f)][SerializeField] private float m_MovementSmoothing = .05f;   // How much to smooth out the movement
@@ -63,6 +66,10 @@ public class CharacterController2D : MonoBehaviour
 
         if (OnLandEvent == null)
             OnLandEvent = new UnityEvent();
+    }
+
+    private void Start(){
+        healthBar.SetMaxHealth((int) life);
     }
 
 
@@ -286,6 +293,7 @@ public class CharacterController2D : MonoBehaviour
             Vector2 damageDir = Vector3.Normalize(transform.position - position) * 40f;
             m_Rigidbody2D.velocity = Vector2.zero;
             m_Rigidbody2D.AddForce(damageDir * 10);
+            healthBar.SetHealth((int) life);
             if (life <= 0)
             {
                 StartCoroutine(WaitToDead());
