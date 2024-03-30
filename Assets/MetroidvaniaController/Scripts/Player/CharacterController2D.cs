@@ -133,7 +133,7 @@ public class CharacterController2D : MonoBehaviour
 
 	public void Move(float move, bool jump, bool dash, bool doubleJumpEnabled)
 	{
-		canDoubleJump = doubleJumpEnabled;
+		if(!doubleJumpEnabled) canDoubleJump = doubleJumpEnabled;
 		if (canMove) {
 			if (dash && canDash && !isWallSliding)
 			{
@@ -248,7 +248,7 @@ public class CharacterController2D : MonoBehaviour
 				canDoubleJump = true;
 			}
         }
-        canDoubleJump = doubleJumpEnabled;
+        if(!doubleJumpEnabled) canDoubleJump = doubleJumpEnabled;
     }
 
 
