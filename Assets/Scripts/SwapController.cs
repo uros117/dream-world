@@ -96,6 +96,10 @@ public class SwapController : MonoBehaviour
             {
                 childCol.enabled = setValue;
             }
+            foreach (SpriteRenderer childSprite in gameObject.GetComponentsInChildren<SpriteRenderer>())
+            {
+                childSprite.enabled = setValue;
+            }
         }
     }
 
