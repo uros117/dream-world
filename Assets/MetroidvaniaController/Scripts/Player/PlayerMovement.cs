@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	public CharacterController2D controller;
 	public Animator animator;
+	public SwapController swapController;
 
 	public float runSpeed = 40f;
 
@@ -27,12 +28,13 @@ public class PlayerMovement : MonoBehaviour {
 			jump = true;
 		}
 
-		if (Input.GetKeyDown(KeyCode.C))
+		if (Input.GetKeyDown(KeyCode.C) && swapController.currDreamState == DreamState.Phobia)
 		{
 			dash = true;
 		}
 
-		/*if (Input.GetAxisRaw("Dash") == 1 || Input.GetAxisRaw("Dash") == -1) //RT in Unity 2017 = -1, RT in Unity 2019 = 1
+
+        /*if (Input.GetAxisRaw("Dash") == 1 || Input.GetAxisRaw("Dash") == -1) //RT in Unity 2017 = -1, RT in Unity 2019 = 1
 		{
 			if (dashAxis == false)
 			{
@@ -46,7 +48,7 @@ public class PlayerMovement : MonoBehaviour {
 		}
 		*/
 
-	}
+    }
 
 	public void OnFall()
 	{
@@ -61,7 +63,7 @@ public class PlayerMovement : MonoBehaviour {
 	void FixedUpdate ()
 	{
 		// Move our character
-		controller.Move(horizontalMove * Time.fixedDeltaTime, jump, dash);
+		controller.Move(horizontalMove * Time.fixedDeltaTime, jump, dash, swapController.currDreamState == DreamState.Fantasy);
 		jump = false;
 		dash = false;
 	}

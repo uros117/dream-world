@@ -11,7 +11,7 @@ public class CameraManager : MonoBehaviour
     public CinemachineVirtualCamera PhobetorCamera;
 
     public CinemachineVirtualCamera startCamera;
-    private CinemachineVirtualCamera currentCam;
+    public CinemachineVirtualCamera currentCam;
 
     public void Start()
     {

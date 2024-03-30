@@ -13,7 +13,7 @@ public class ChangePostProcess : MonoBehaviour
     public PostProcessProfile dream_profile;
 
     private PostProcessVolume post_process_volume;
-    private bool is_normal_state = true;
+    //private bool is_normal_state = true;
 
     // Start is called before the first frame update
     void Start()
@@ -35,18 +35,18 @@ public class ChangePostProcess : MonoBehaviour
     void Update()
     {
         // Check if the specified key is pressed down
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            if (is_normal_state)
-            {
-                ChangeToDream();
-                is_normal_state = false;
-            } else
-            {
-                ChangeToNormal();
-                is_normal_state = true;
-            }
-        }
+        //if (Input.GetKeyDown(KeyCode.T))
+        //{
+        //    if (is_normal_state)
+        //    {
+        //        ChangeToDream();
+        //        is_normal_state = false;
+        //    } else
+        //    {
+        //        ChangeToNormal();
+        //        is_normal_state = true;
+        //    }
+        //}
 
     }
 
