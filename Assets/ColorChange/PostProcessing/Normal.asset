@@ -44,6 +44,33 @@ MonoBehaviour:
   - {fileID: 3534653955600974250}
   - {fileID: -705240206797812966}
   - {fileID: 2236369739687327931}
+  - {fileID: 1657709188596537686}
+--- !u!114 &1657709188596537686
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6050e2d5de785ce4d931e4dbdbf2d755, type: 3}
+  m_Name: ChromaticAberration
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  spectralLut:
+    overrideState: 0
+    value: {fileID: 0}
+    defaultState: 1
+  intensity:
+    overrideState: 0
+    value: 0
+  fastMode:
+    overrideState: 0
+    value: 0
 --- !u!114 &2236369739687327931
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -141,19 +168,19 @@ MonoBehaviour:
     value: 1
   temperature:
     overrideState: 1
-    value: 44.9
+    value: 49.3
   tint:
     overrideState: 0
-    value: 7.7
+    value: 95.8
   colorFilter:
     overrideState: 0
-    value: {r: 1, g: 1, b: 1, a: 1}
+    value: {r: 1, g: 0.9914046, b: 0.35534585, a: 1}
   hueShift:
     overrideState: 0
-    value: 0
+    value: 67
   saturation:
     overrideState: 0
-    value: 0
+    value: 17.8
   brightness:
     overrideState: 0
     value: 0
@@ -162,43 +189,43 @@ MonoBehaviour:
     value: 0
   contrast:
     overrideState: 0
-    value: 0
+    value: 22
   mixerRedOutRedIn:
-    overrideState: 0
-    value: 100
+    overrideState: 1
+    value: 148
   mixerRedOutGreenIn:
-    overrideState: 0
+    overrideState: 1
     value: 0
   mixerRedOutBlueIn:
-    overrideState: 0
+    overrideState: 1
     value: 0
   mixerGreenOutRedIn:
-    overrideState: 0
+    overrideState: 1
     value: 0
   mixerGreenOutGreenIn:
-    overrideState: 0
+    overrideState: 1
     value: 100
   mixerGreenOutBlueIn:
-    overrideState: 0
+    overrideState: 1
     value: 0
   mixerBlueOutRedIn:
     overrideState: 0
-    value: 0
+    value: 64
   mixerBlueOutGreenIn:
     overrideState: 0
-    value: 0
+    value: -13
   mixerBlueOutBlueIn:
     overrideState: 0
-    value: 100
+    value: 83
   lift:
-    overrideState: 0
-    value: {x: 1, y: 1, z: 1, w: 0}
+    overrideState: 1
+    value: {x: 0.9973186, y: 0.9933157, z: 1, w: -0.004237735}
   gamma:
-    overrideState: 0
-    value: {x: 1, y: 1, z: 1, w: 0}
+    overrideState: 1
+    value: {x: 1, y: 0.9667654, z: 0.9000453, w: 0.173655}
   gain:
     overrideState: 0
-    value: {x: 1, y: 1, z: 1, w: 0}
+    value: {x: 1, y: 0.9738178, z: 0.5845361, w: 0.21175222}
   masterCurve:
     overrideState: 0
     value:

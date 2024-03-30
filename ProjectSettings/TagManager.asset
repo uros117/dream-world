@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Phobia
+  - Highlight
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,7 @@ TagManager:
   - Water
   - UI
   - Post-Processing
-  - 
+  - Highlight
   - 
   - 
   - 
@@ -54,4 +55,7 @@ TagManager:
     locked: 0
   - name: Objects
     uniqueID: 2176379329
+    locked: 0
+  - name: Light
+    uniqueID: 4174634129
     locked: 0
