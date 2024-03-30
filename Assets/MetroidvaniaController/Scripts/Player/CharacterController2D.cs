@@ -42,6 +42,8 @@ public class CharacterController2D : MonoBehaviour
 	//private float jumpWallDistX = 0; //Distance between player and wall
 	//private bool limitVelOnWallJump = false; //For limit wall jump distance with low fps
 
+	private bool jumpsAvailable = true;
+
 	[Header("Events")]
 	[Space]
 
@@ -181,6 +183,7 @@ public class CharacterController2D : MonoBehaviour
 				canDoubleJump = true;
 				particleJumpDown.Play();
 				particleJumpUp.Play();
+				jumpsAvailable = true;
 			}
 			else if (!m_Grounded && jumpClicked && canDoubleJump && !isWallSliding)
 			{
@@ -189,8 +192,11 @@ public class CharacterController2D : MonoBehaviour
 				m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce / 1.2f));
 				animator.SetBool("IsDoubleJumping", true);
 			}
-
-			if (jumping && !jumpClicked)
+			else if(!m_Grounded && jumpClicked)
+			{
+				jumpsAvailable = false;
+			}
+			else if (jumping && !jumpClicked && jumpsAvailable)
 			{
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpBoost));
             }

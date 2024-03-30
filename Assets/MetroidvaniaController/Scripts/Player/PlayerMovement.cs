@@ -77,7 +77,7 @@ public class PlayerMovement : MonoBehaviour {
 		{
 			jumpDur += Time.fixedDeltaTime;
 		}
-		Debug.Log(jumpDur);
+		//Debug.Log(jumpDur);
 		//else jumpDur = 0;
 		//else jump = false;
 		controller.Move(horizontalMove * Time.fixedDeltaTime, jump, (jumpDur > 0 && jumpDur < jumpDurMax), dash, swapController.currDreamState == DreamState.Fantasy);

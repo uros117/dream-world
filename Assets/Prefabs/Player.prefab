@@ -9897,7 +9897,7 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 8239429523230041462}
   m_WallCheck: {fileID: 9120903977151281894}
   canDoubleJump: 1
-  m_DashForce: 25
+  m_DashForce: 20
   life: 10
   invincible: 0
   particleJumpUp: {fileID: 7342631379587934463}
@@ -9966,7 +9966,7 @@ MonoBehaviour:
   controller: {fileID: 2336173126180742439}
   animator: {fileID: 7676634083279969535}
   swapController: {fileID: 0}
-  runSpeed: 40
+  runSpeed: 30
 --- !u!212 &9004780110878903551
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10076,7 +10076,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 9075270835946833379}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 73035f974857c94489896440d1e2b9e8, type: 2}
+  m_Material: {fileID: 6200000, guid: 5cf93a94d9826544886fe3334db13e0a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
