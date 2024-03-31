@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 338322852717244494}
-  - component: {fileID: 543425749143599167}
+  - component: {fileID: 4473873322404909000}
   - component: {fileID: 8650693424871553369}
   - component: {fileID: 8685247773977787707}
   - component: {fileID: 1248061646857956982}
@@ -134,7 +134,7 @@ Transform:
   - {fileID: 6017446151620924899}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &543425749143599167
+--- !u!114 &4473873322404909000
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,18 +143,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 8650872761873632637}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19daed33242bbb348a96213765c8bc8b, type: 3}
+  m_Script: {fileID: 11500000, guid: 57d8868476f49084b84e32bfb406abc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 15
-  speed: 2
+  life: 30
+  speed: 3
   isInvincible: 0
-  m_DashForce: 25
+  m_DashForce: 20
   enemy: {fileID: 0}
   meleeDist: 1.5
   rangeDist: 5
   dmgValue: 4
-  throwableObject: {fileID: 5532974359214069763, guid: c928b20c45c6dcd458c1b9a8c6226d54, type: 3}
+  throwableObject: {fileID: 0}
 --- !u!212 &8650693424871553369
 SpriteRenderer:
   m_ObjectHideFlags: 0
