@@ -12,14 +12,28 @@ public class SkillController : MonoBehaviour
 
     public pointsScript insPoints, fearPoints;
 
+    public GameObject SkillMenu;
+    public bool SkillMenuActive;
+
+
+
     void Start()
     {
         acquiredSkills = new ArrayList();
+        SkillMenuActive = false;
+        SkillMenu.SetActive(SkillMenuActive);
     }
 
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            SkillMenuActive = !SkillMenuActive;
+            SkillMenu.SetActive(SkillMenuActive);
+            Cursor.lockState = CursorLockMode.None; // Make the cursor freely movable
+            Cursor.visible = true;
+            //Time.timeScale = SkillMenuActive ? 0 : 1;
+        }
     }
 
     public void acquiredInspiration()
