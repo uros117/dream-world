@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13c92cfe0343e1e42a6bf76d0dc01f26, type: 3}
+  m_Name: SelfHealAbility
+  m_EditorClassIdentifier: 
+  name: PlayerSelfHeal
+  cooldownTime: 10
+  activeTime: 1
