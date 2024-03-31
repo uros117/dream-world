@@ -32,12 +32,13 @@ public class HydraAI: MonoBehaviour
 
 	public float dist_to_palyer_treshold = 2f;
 	public float dist_to_palyer_treshold_y = 5f;
-	public GameObject throwableObject;
 
 	private float randomDecision = 0;
 	private bool doOnceDecision = true;
 	private bool endDecision = false;
 	private Animator anim;
+
+	public float playerDetectionRange = 15f;
 
 	void Awake()
 	{
@@ -49,6 +50,8 @@ public class HydraAI: MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate()
 	{
+		if ((enemy.transform.position - transform.position).magnitude > playerDetectionRange)
+			return;
 
 		if (life <= 0)
 		{
