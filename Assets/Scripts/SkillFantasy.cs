@@ -7,6 +7,7 @@ using static SkillTree;
 
 public class SkillFantasy : Skill
 {
+    public AbilityHolder abilityHolder;
     public override void UpgradeUI()
     {
         TitleText.text = $"{skillTree.SkillLevels[id]}/{skillTree.SkillCaps[id]}\n{skillTree.SkillNames[id]}";
@@ -30,6 +31,22 @@ public class SkillFantasy : Skill
         skillTree.InspirationPoint -= 1;
         skillTree.SkillLevels[id]++;
         skillTree.UpdateAllSkillUI();
+
+        if (skillTree.SkillLevels[id] >= skillTree.SkillCaps[id]) 
+        {
+            AbilityHolder abilityHolder = GameObject.FindGameObjectWithTag("Player").GetComponent<AbilityHolder>();
+
+            // Check if we successfully got the AbilityHolder script
+            if (abilityHolder != null)
+            {
+                // Enable the AbilityHolder script
+                abilityHolder.enabled = true;
+            }
+            else
+            {
+                Debug.LogError("Unable to find AbilityHolder script on player GameObject.");
+            }
+        }
 
     }
 }
