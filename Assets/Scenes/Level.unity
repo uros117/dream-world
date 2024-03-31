@@ -1015,37 +1015,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 1
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_AllowHDROutput: 1
-  m_UseScreenCoordOverride: 0
-  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
-  m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
 --- !u!1 &517377864
 GameObject:
   m_ObjectHideFlags: 0
@@ -3255,11 +3224,11 @@ PrefabInstance:
       objectReference: {fileID: 293611584}
     - target: {fileID: 4519678500266617319, guid: 5387315684b96584abbd472956f24286, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -39.69
+      value: 32.2
       objectReference: {fileID: 0}
     - target: {fileID: 4519678500266617319, guid: 5387315684b96584abbd472956f24286, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.65
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 4519678500266617319, guid: 5387315684b96584abbd472956f24286, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3293,6 +3262,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5059703247793887555, guid: 5387315684b96584abbd472956f24286, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5864630460478837262, guid: 5387315684b96584abbd472956f24286, type: 3}
       propertyPath: cam
       value: 
@@ -3305,10 +3278,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.98
       objectReference: {fileID: 0}
-    - target: {fileID: 8577933168033559102, guid: 5387315684b96584abbd472956f24286, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9075270835946833379, guid: 5387315684b96584abbd472956f24286, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3318,7 +3287,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9075270835946833379, guid: 5387315684b96584abbd472956f24286, type: 3}
-      insertIndex: -1
+      insertIndex: 10
       addedObject: {fileID: 2078502364}
   m_SourcePrefab: {fileID: 100100000, guid: 5387315684b96584abbd472956f24286, type: 3}
 --- !u!1 &1103939167
@@ -4996,7 +4965,7 @@ Transform:
   m_GameObject: {fileID: 1279997121}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.52447, y: -3.8770185, z: 2.549319}
+  m_LocalPosition: {x: -4.52447, y: -4.02, z: 2.549319}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5076,8 +5045,8 @@ PolygonCollider2D:
     - - {x: 49.5598, y: 1.3984654}
       - {x: 48.417538, y: 1.3991011}
       - {x: 48.013153, y: 0.80806947}
-      - {x: 48.033833, y: 0.03854847}
-      - {x: 49.93814, y: 0.039043903}
+      - {x: 48.02894, y: 0.25389498}
+      - {x: 49.9724, y: 0.25928462}
       - {x: 49.954117, y: 0.8193617}
   m_UseDelaunayMesh: 0
 --- !u!483693784 &1279997125

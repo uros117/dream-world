@@ -26,19 +26,19 @@ public class PlayerMovement : MonoBehaviour {
 
 		animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
-		if (Input.GetKeyDown(KeyCode.Z))
+		if (Input.GetKeyDown(KeyCode.UpArrow))
 		{
 			jump = true;
 
 			jumpDur = 0;
 		}
 
-		if (Input.GetKeyUp(KeyCode.Z))
+		if (Input.GetKeyUp(KeyCode.UpArrow))
 		{
 			jumpDur = 0;
 		}
 
-		if (Input.GetKeyDown(KeyCode.C) && swapController.currDreamState == DreamState.Phobia)
+		if (Input.GetKeyDown(KeyCode.LeftShift) && swapController.currDreamState == DreamState.Phobia)
 		{
 			dash = true;
 		}
@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour {
 	void FixedUpdate ()
 	{
 		// Move our character
-		if ((jumpDur < jumpDurMax) && Input.GetKey(KeyCode.Z))
+		if ((jumpDur < jumpDurMax) && Input.GetKey(KeyCode.UpArrow))
 		{
 			jumpDur += Time.fixedDeltaTime;
 		}
