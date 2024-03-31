@@ -28,7 +28,7 @@ public class SkillTree : MonoBehaviour
         FearPoint = 20;
 
         SkillLevels = new int[6];
-        SkillCaps = new[] { 1, 1, 3, 3, 5, 5 };
+        SkillCaps = new[] { 1, 1, 3, 5, 3, 5 };
 
         SkillNames = new[] { "The Brave", "Legacy", "Heroism", "Imortality", "The Hydra", "Lions Rawr" };
         SkillDescription = new[]

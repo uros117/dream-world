@@ -582,6 +582,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5427196781588000641, guid: 90c9d85c4649f4ae28790af03c88c72a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427196781588000641, guid: 90c9d85c4649f4ae28790af03c88c72a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2056146447196369275, guid: fd63ae93759a04022b11de9d2b233d39, type: 3}
@@ -593,6 +597,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SkillFantasy, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 5427196781588000641, guid: 90c9d85c4649f4ae28790af03c88c72a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7127710070134376355, guid: 90c9d85c4649f4ae28790af03c88c72a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b99995a0f25801a4d9f648d8be6cf439, type: 3}
     m_RemovedComponents:
     - {fileID: 5294184268137664418, guid: 90c9d85c4649f4ae28790af03c88c72a, type: 3}
     m_RemovedGameObjects: []
@@ -720,6 +732,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5427196781588000641, guid: 90c9d85c4649f4ae28790af03c88c72a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427196781588000641, guid: 90c9d85c4649f4ae28790af03c88c72a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2056146447196369275, guid: fd63ae93759a04022b11de9d2b233d39, type: 3}
@@ -731,6 +747,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SkillFantasy, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 5427196781588000641, guid: 90c9d85c4649f4ae28790af03c88c72a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7127710070134376355, guid: 90c9d85c4649f4ae28790af03c88c72a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f4933b01621c8d943bd755751b7b75c2, type: 3}
     m_RemovedComponents:
     - {fileID: 5294184268137664418, guid: 90c9d85c4649f4ae28790af03c88c72a, type: 3}
     m_RemovedGameObjects: []
@@ -899,6 +923,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5427196781588000641, guid: 90c9d85c4649f4ae28790af03c88c72a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427196781588000641, guid: 90c9d85c4649f4ae28790af03c88c72a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7693650986229155614, guid: 7859a5b9f84c4429b80f282ee2f06342, type: 3}
@@ -910,6 +938,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SkillFear, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 5427196781588000641, guid: 90c9d85c4649f4ae28790af03c88c72a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7127710070134376355, guid: 90c9d85c4649f4ae28790af03c88c72a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 835919401f538eb42b06914372123e8e, type: 3}
     m_RemovedComponents:
     - {fileID: 5294184268137664418, guid: 90c9d85c4649f4ae28790af03c88c72a, type: 3}
     m_RemovedGameObjects: []
@@ -977,10 +1013,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkillLevels: 
   SkillCaps: 
-  FantasySkillNames: []
-  FantasySkillDescritption: []
-  FearSkillNames: []
-  FearSkillDescription: []
   SkillNames: []
   SkillDescription: []
   SkillList: []
@@ -1505,6 +1537,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5427196781588000641, guid: 90c9d85c4649f4ae28790af03c88c72a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427196781588000641, guid: 90c9d85c4649f4ae28790af03c88c72a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7693650986229155614, guid: 7859a5b9f84c4429b80f282ee2f06342, type: 3}
@@ -1516,6 +1552,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SkillFear, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 5427196781588000641, guid: 90c9d85c4649f4ae28790af03c88c72a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7127710070134376355, guid: 90c9d85c4649f4ae28790af03c88c72a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cc16da6188962544787f7f3b5c7f499f, type: 3}
     m_RemovedComponents:
     - {fileID: 5294184268137664418, guid: 90c9d85c4649f4ae28790af03c88c72a, type: 3}
     m_RemovedGameObjects: []
@@ -1629,6 +1673,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1124234211}
     m_Modifications:
+    - target: {fileID: 463213286554449013, guid: 7859a5b9f84c4429b80f282ee2f06342, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b12502ba5c973e3488a651f1e7634829, type: 3}
+    - target: {fileID: 3447041774864178263, guid: 7859a5b9f84c4429b80f282ee2f06342, type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3447041774864178263, guid: 7859a5b9f84c4429b80f282ee2f06342, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3447041774864178263, guid: 7859a5b9f84c4429b80f282ee2f06342, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1640,6 +1696,10 @@ PrefabInstance:
     - target: {fileID: 3447041774864178263, guid: 7859a5b9f84c4429b80f282ee2f06342, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SkillFear, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3447041774864178263, guid: 7859a5b9f84c4429b80f282ee2f06342, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7237517358241301435, guid: 7859a5b9f84c4429b80f282ee2f06342, type: 3}
       propertyPath: m_Pivot.x
@@ -1739,6 +1799,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1124234211}
     m_Modifications:
     - target: {fileID: 2917899984170086784, guid: fd63ae93759a04022b11de9d2b233d39, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917899984170086784, guid: fd63ae93759a04022b11de9d2b233d39, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2056146447196369275, guid: fd63ae93759a04022b11de9d2b233d39, type: 3}
@@ -1749,6 +1813,10 @@ PrefabInstance:
     - target: {fileID: 2917899984170086784, guid: fd63ae93759a04022b11de9d2b233d39, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SkillFantasy, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917899984170086784, guid: fd63ae93759a04022b11de9d2b233d39, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7194780886281694828, guid: fd63ae93759a04022b11de9d2b233d39, type: 3}
       propertyPath: m_Pivot.x
