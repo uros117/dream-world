@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Phobia
   - Highlight
+  - Fantasy
   layers:
   - Default
   - TransparentFX
