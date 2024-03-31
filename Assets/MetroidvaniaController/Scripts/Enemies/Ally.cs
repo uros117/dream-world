@@ -35,6 +35,7 @@ public class Ally : MonoBehaviour
 	private bool endDecision = false;
 	private Animator anim;
 
+
 	void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();

@@ -29,6 +29,8 @@ public class EnemyFlying : MonoBehaviour {
 
 	private float startedBackingOff;
 
+	public float playerDetectionRange = 20f;
+
 	void Awake () {
 		fallCheck = transform.Find("FallCheck");
 		wallCheck = transform.Find("WallCheck");
@@ -37,6 +39,9 @@ public class EnemyFlying : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+
+		if ((player_game_object.transform.position - transform.position).magnitude > playerDetectionRange)
+			return;
 
         //Quaternion rotation = Quaternion.LookRotation(
         //    player_game_object.transform.position - transform.position,

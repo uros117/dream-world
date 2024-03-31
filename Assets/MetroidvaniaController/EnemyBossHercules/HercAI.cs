@@ -28,12 +28,12 @@ public class HercAI: MonoBehaviour
 	private Transform attackCheck;
 	public float dmgValue = 4;
 
-	public GameObject throwableObject;
-
 	private float randomDecision = 0;
 	private bool doOnceDecision = true;
 	private bool endDecision = false;
 	private Animator anim;
+
+	public float playerDetectionRange = 15f;
 
 	void Awake()
 	{
@@ -45,6 +45,8 @@ public class HercAI: MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate()
 	{
+		if ((enemy.transform.position - transform.position).magnitude > playerDetectionRange)
+			return;
 
 		if (life <= 0)
 		{
