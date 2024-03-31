@@ -8,6 +8,7 @@ TagManager:
   - Phobia
   - Highlight
   - Fantasy
+  - Audio
   layers:
   - Default
   - TransparentFX
