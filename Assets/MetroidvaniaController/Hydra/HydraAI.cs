@@ -171,7 +171,7 @@ public class HydraAI: MonoBehaviour
 	public void MeleeAttack()
 	{
 		transform.GetComponent<Animator>().SetBool("Attack", true);
-		Collider2D[] collidersEnemies = Physics2D.OverlapCircleAll(attackCheck.position, 0.9f);
+		Collider2D[] collidersEnemies = Physics2D.OverlapBoxAll(attackCheck.position, new Vector2(5.0f, 3.0f), 0);
 		for (int i = 0; i < collidersEnemies.Length; i++)
 		{
 			if (collidersEnemies[i].gameObject.tag == "Enemy" && collidersEnemies[i].gameObject != gameObject )

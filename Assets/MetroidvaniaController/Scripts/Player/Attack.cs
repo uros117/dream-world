@@ -14,6 +14,9 @@ public class Attack : MonoBehaviour
 
 	public GameObject cam;
 
+	private float shootCD = 2.0f;
+	private float timeOfShot = 0;
+
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -37,10 +40,14 @@ public class Attack : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.X))
 		{
-			GameObject throwableWeapon = Instantiate(throwableObject, transform.position + new Vector3(transform.localScale.x * 0.5f,-0.2f), Quaternion.identity) as GameObject; 
-			Vector2 direction = new Vector2(transform.localScale.x, 0);
-			throwableWeapon.GetComponent<ThrowableWeapon>().direction = direction; 
-			throwableWeapon.name = "ThrowableWeapon";
+			if (Time.time - timeOfShot > shootCD)
+			{
+				timeOfShot = Time.time;
+                GameObject throwableWeapon = Instantiate(throwableObject, transform.position + new Vector3(transform.localScale.x * 0.5f, -0.2f), Quaternion.identity) as GameObject;
+                Vector2 direction = new Vector2(transform.localScale.x, 0);
+                throwableWeapon.GetComponent<ThrowableWeapon>().direction = direction;
+                throwableWeapon.name = "ThrowableWeapon";
+            }
 		}
 	}
 
