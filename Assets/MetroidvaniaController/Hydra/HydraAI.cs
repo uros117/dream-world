@@ -110,7 +110,7 @@ public class HydraAI: MonoBehaviour
 					}
 				}
 			}
-			else if (isHitted && randomDecision > 0.6f)
+			else if (isHitted)
 			{
 				StartCoroutine(BackOff());
 			}
@@ -165,7 +165,8 @@ public class HydraAI: MonoBehaviour
 			transform.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
 			transform.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(direction * 300f, 100f)); 
 			StartCoroutine(HitTime());
-		}
+			//if(life < 0) GetComponent<DropPointOnDeath>().dropPoint();
+        }
 	}
 
 	public void MeleeAttack()
@@ -294,6 +295,8 @@ public class HydraAI: MonoBehaviour
 		capsule.offset = new Vector2(0f, -0.8f);
 		capsule.direction = CapsuleDirection2D.Horizontal;
 		transform.GetComponent<Animator>().SetBool("IsDead", true);
+
+
 		yield return new WaitForSeconds(0.25f);
 		//m_Rigidbody2D.velocity = new Vector2(0, m_Rigidbody2D.velocity.y);
 		m_Rigidbody2D.velocity = new Vector2(0, 0);
