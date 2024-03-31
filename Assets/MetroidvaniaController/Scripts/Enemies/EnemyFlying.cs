@@ -126,7 +126,8 @@ public class EnemyFlying : MonoBehaviour {
 			transform.GetComponent<Animator>().SetBool("Hit", true);
 			life -= damage;
 			rb.velocity = Vector2.zero;
-			if(life > 0) rb.AddForce(new Vector2(direction * 500f, 100f));
+			if (life > 0) rb.AddForce(new Vector2(direction * 500f, 100f));
+			else GetComponent<Rigidbody2D>().simulated = false;
 			StartCoroutine(HitTime());
 			StartCoroutine(BackOffTime());
 		}
