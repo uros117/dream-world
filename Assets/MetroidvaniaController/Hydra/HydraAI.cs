@@ -110,7 +110,7 @@ public class HydraAI: MonoBehaviour
 					}
 				}
 			}
-			else if (isHitted)
+			else if (isHitted && randomDecision > 0.6f)
 			{
 				StartCoroutine(BackOff());
 			}
@@ -295,7 +295,8 @@ public class HydraAI: MonoBehaviour
 		capsule.direction = CapsuleDirection2D.Horizontal;
 		transform.GetComponent<Animator>().SetBool("IsDead", true);
 		yield return new WaitForSeconds(0.25f);
-		m_Rigidbody2D.velocity = new Vector2(0, m_Rigidbody2D.velocity.y);
+		//m_Rigidbody2D.velocity = new Vector2(0, m_Rigidbody2D.velocity.y);
+		m_Rigidbody2D.velocity = new Vector2(0, 0);
 		yield return new WaitForSeconds(1f);
 		Destroy(gameObject);
 	}
