@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2852210444276505478}
   - component: {fileID: 3996602485294290256}
   - component: {fileID: 1999790417634723999}
+  - component: {fileID: 5942226079994388942}
   m_Layer: 9
   m_Name: FlyingEnemySimple
   m_TagString: Enemy
@@ -59,8 +60,8 @@ MonoBehaviour:
   speed: 5
   speedNormal: 5
   speedDream: 7
-  animatorNormal: {fileID: 0}
-  animatorDream: {fileID: 0}
+  animatorNormal: {fileID: 9100000, guid: fa7d4ec196a11254eb9fdfd78d51e3dc, type: 2}
+  animatorDream: {fileID: 9100000, guid: cb3176d7b8d886448b7bb94700d8a011, type: 2}
   isInvincible: 0
   playerDetectionRange: 20
 --- !u!212 &9159021359484874321
@@ -106,7 +107,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 1198183762, guid: 88073800faeff495fb2357f39bd7e32c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 2.9985716, y: 2.249375}
@@ -198,6 +199,56 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!60 &5942226079994388942
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148789481252820741}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 2.9985716, y: 2.249375}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.027290344, y: 0.5785513}
+      - {x: -1.2105255, y: 0.4748478}
+      - {x: -0.4375, y: -0.51968765}
+      - {x: 0.4884987, y: -0.5141716}
+      - {x: 1.1695633, y: 0.49700356}
+  m_UseDelaunayMesh: 0
 --- !u!1 &2155178433283899365
 GameObject:
   m_ObjectHideFlags: 0

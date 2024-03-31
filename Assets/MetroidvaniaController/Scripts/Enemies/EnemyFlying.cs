@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEditor.Animations;
 
 public class EnemyFlying : MonoBehaviour {
 
@@ -20,8 +21,8 @@ public class EnemyFlying : MonoBehaviour {
 	public float speedNormal = 5f;
 	public float speedDream = 7f;
 
-	public Animator animatorNormal;
-	public Animator animatorDream;
+	public AnimatorController animatorNormal;
+	public AnimatorController animatorDream;
 
 	public bool isInvincible = false;
 	private bool isHitted = false;
@@ -30,6 +31,11 @@ public class EnemyFlying : MonoBehaviour {
 	private float startedBackingOff;
 
 	public float playerDetectionRange = 20f;
+
+	const int lifeFantasy = 10;
+	const int lifePhobia = 4;
+
+
 
 	void Awake () {
 		fallCheck = transform.Find("FallCheck");
@@ -62,12 +68,18 @@ public class EnemyFlying : MonoBehaviour {
 
 		if (life > 0)
 		{
+			Vector3 temp = rb.velocity;
 			if (isBackingOff)
 			{
 				rb.velocity = -(player_game_object.transform.position - transform.position).normalized * speed * (1.0f - (Time.time - startedBackingOff));
 			} else
 			{
 				rb.velocity = (player_game_object.transform.position - transform.position).normalized * speed;
+			}
+
+			if(Mathf.Sign(temp.x) != Mathf.Sign(rb.velocity.x) && Mathf.Sign(temp.x) != 0 && Mathf.Sign(rb.velocity.x) != 0)
+			{
+				Flip();
 			}
 
 
@@ -114,7 +126,7 @@ public class EnemyFlying : MonoBehaviour {
 			transform.GetComponent<Animator>().SetBool("Hit", true);
 			life -= damage;
 			rb.velocity = Vector2.zero;
-			rb.AddForce(new Vector2(direction * 500f, 100f));
+			if(life > 0) rb.AddForce(new Vector2(direction * 500f, 100f));
 			StartCoroutine(HitTime());
 			StartCoroutine(BackOffTime());
 		}
@@ -158,4 +170,22 @@ public class EnemyFlying : MonoBehaviour {
 		yield return new WaitForSeconds(3f);
 		Destroy(gameObject);
 	}
+
+	public void swapToFantasy()
+	{
+		life = life * lifeFantasy / lifePhobia;
+		speed = speedNormal;
+		GetComponent<CapsuleCollider2D>().enabled = true;
+		GetComponent<PolygonCollider2D>().enabled = false;
+		GetComponent<Animator>().runtimeAnimatorController = animatorNormal;
+	}
+
+    public void swapToPhobia()
+    {
+        life = life * lifePhobia / lifeFantasy;
+        speed = speedDream;
+        GetComponent<CapsuleCollider2D>().enabled = false;
+        GetComponent<PolygonCollider2D>().enabled = true;
+        GetComponent<Animator>().runtimeAnimatorController = animatorDream;
+    }
 }

@@ -306,6 +306,17 @@ public class CharacterController2D : MonoBehaviour
         }
     }
 
+    public void instantDeath(Vector3 position)
+    {
+        animator.SetBool("Hit", true);
+        life = 0;
+        Vector2 damageDir = Vector3.Normalize(transform.position - position) * 40f;
+        m_Rigidbody2D.velocity = Vector2.zero;
+        m_Rigidbody2D.AddForce(damageDir * 10);
+        healthBar.SetHealth((int)life);
+        StartCoroutine(WaitToDead());   
+    }
+
     IEnumerator DashCooldown()
     {
         animator.SetBool("IsDashing", true);

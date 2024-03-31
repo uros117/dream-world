@@ -7,9 +7,10 @@ public class InstantKillZone : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D col)
     {
+        Debug.Log(col);
         if (col.gameObject.tag == "Player")
         {
-            col.gameObject.GetComponent<CharacterController2D>().ApplyDamage(col.gameObject.GetComponent<CharacterController2D>().life, col.gameObject.transform.position);
+            col.gameObject.GetComponent<CharacterController2D>().instantDeath(col.gameObject.transform.position);
         }
         else
         {
